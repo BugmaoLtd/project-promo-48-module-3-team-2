@@ -1,8 +1,43 @@
 import "../scss/App.scss";
 import logoAdalab from "../images/adalab.png";
 import logoCoolProjects from "../images/laptop-code-solid.svg";
+import { useState } from "react";
 
 function App() {
+  const [projectName, setProjectName] = useState("Nombre del proyecto");
+  const [slogan, setSlogan] = useState("Slogan");
+  const [repo, setRepo] = useState("Repositorio");
+  const [demo, setDemo] = useState("Demo");
+  const [tech, setTech] = useState("Tecnologías");
+  const [desc, setDesc] = useState("Descripción");
+  const [name, setName] = useState("Nombre");
+  const [job, setJob] = useState("Profesión");
+  
+  const handleChangeProjectName = (event) => {
+    setProjectName(event.target.value);
+  }
+  const handleChangeSlogan = (event) => {
+    setSlogan(event.target.value);
+  }
+  const handleChangeRepo = (event) => {
+    setRepo(event.target.value);
+  }
+  const handleChangeDemo = (event) => {
+    setDemo(event.target.value);
+  }
+  const handleChangeTech = (event) => {
+    setTech(event.target.value);
+  }
+  const handleChangeDesc = (event) => {
+    setDesc(event.target.value);
+  }
+  const handleChangeName = (event) => {
+    setName(event.target.value);
+  }
+  const handleChangeJob = (event) => {
+    setJob(event.target.value);
+  }
+
   return (
     <div className="container">
       <header className="header">
@@ -43,33 +78,29 @@ function App() {
 
             <div className="card__author">
               <div className="card__authorPhoto"></div>
-              <p className="card__job">Full stack Developer</p>
-              <h3 className="card__name">Emmelie Bjôrklund</h3>
+              <p className="card__job">{job}</p>
+              <h3 className="card__name">{name}</h3>
             </div>
 
             <div className="card__project">
-              <h3 className="card__name">Elegant Workspace</h3>
-              <p className="card__slogan">Diseños Exclusivos</p>
+              <h3 className="card__name">{projectName}</h3>
+              <p className="card__slogan">{slogan}</p>
               <h3 className="card__descriptionTitle">Product description</h3>
-              <p className="card__description">
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nulla,
-                quos? Itaque, molestias eveniet laudantium adipisci vitae
-                ratione
-              </p>
+              <p className="card__description">{desc}</p>
 
               <div className="card__technicalInfo">
-                <p className="card__technologies">React JS - HTML - CSS</p>
+                <p className="card__technologies">{tech}</p>
 
                 <a
                   className="icon icon__www"
-                  href="#"
+                  href={demo}
                   title="Haz click para ver el proyecto online"
                 >
                   Web link
                 </a>
                 <a
                   className="icon icon__github"
-                  href="#"
+                  href={repo}
                   title="Haz click para ver el código del proyecto"
                 >
                   GitHub link
@@ -85,6 +116,7 @@ function App() {
               Cuéntanos sobre el proyecto
             </legend>
             <input
+              onChange={handleChangeProjectName}
               className="addForm__input"
               type="text"
               name="name"
@@ -92,6 +124,7 @@ function App() {
               placeholder="Nombre del proyecto"
             />
             <input
+              onChange={handleChangeSlogan}
               className="addForm__input"
               type="text"
               name="slogan"
@@ -100,6 +133,7 @@ function App() {
             />
             <div className="addForm__2col">
               <input
+                onChange={handleChangeRepo}
                 className="addForm__input"
                 type="url"
                 name="repo"
@@ -107,6 +141,7 @@ function App() {
                 placeholder="Repositorio"
               />
               <input
+                onChange={handleChangeDemo}
                 className="addForm__input"
                 type="url"
                 name="demo"
@@ -115,6 +150,7 @@ function App() {
               />
             </div>
             <input
+              onChange={handleChangeTech}
               className="addForm__input"
               type="text"
               name="technologies"
@@ -122,6 +158,7 @@ function App() {
               placeholder="Tecnologías"
             />
             <textarea
+              onChange={handleChangeDesc}
               className="addForm__input"
               type="text"
               name="desc"
@@ -136,6 +173,7 @@ function App() {
               Cuéntanos sobre la autora
             </legend>
             <input
+              onChange={handleChangeName}
               className="addForm__input"
               type="text"
               name="autor"
@@ -143,6 +181,7 @@ function App() {
               placeholder="Nombre"
             />
             <input
+              onChange={handleChangeJob}
               className="addForm__input"
               type="text"
               name="job"
