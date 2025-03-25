@@ -1,7 +1,7 @@
 import "../scss/App.scss";
-import logoAdalab from "../images/adalab.png";
-import logoCoolProjects from "../images/laptop-code-solid.svg";
 import { useState } from "react";
+import Header from "./Header";
+import Footer from "./Footer";
 
 function App() {
   const [projectName, setProjectName] = useState("Nombre del proyecto");
@@ -40,21 +40,7 @@ function App() {
 
   return (
     <div className="container">
-      <header className="header">
-        <a
-          className="header__brand"
-          href="./"
-          title="Haz click para volver a la página inicial"
-        >
-          <img
-            className="header__companyLogo"
-            src={logoCoolProjects}
-            alt="Logo proyectos molones"
-          />
-          <h1 className="header__title">Proyectos molones</h1>
-        </a>
-        <img className="logoSponsor" src={logoAdalab} alt="Logo Adalab" />
-      </header>
+      <Header/>
 
       <main className="main">
         <section className="hero">
@@ -213,10 +199,7 @@ function App() {
           </fieldset>
         </form>
       </main>
-
-      <footer className="footer">
-        <img className="logoSponsor" src={logoAdalab} alt="Logo Adalab" />
-      </footer>
+      <Footer />
     </div>
   );
 }
