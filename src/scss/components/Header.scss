@@ -4,23 +4,24 @@
     display: flex;
     justify-content: space-between;
     margin-bottom: 2.5rem;
+
+    &__brand {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        padding: 7px 5px;
+        gap: 7px;
+      }
+
+    &__companyLogo {
+        height: 31px;
+        color: var(--color-white);
+      }
+
+    &__title {
+        font: var(--font-title-brand);
+        text-transform: capitalize;
+        color: var(--color-white);
+      }
   }
   
-  .header .header__brand {
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    padding: 7px 5px;
-    gap: 7px;
-  }
-  
-  .header .header__companyLogo {
-    height: 31px;
-    color: var(--color-white);
-  }
-  
-  .header .header__title {
-    font: var(--font-title-brand);
-    text-transform: capitalize;
-    color: var(--color-white);
-  }
