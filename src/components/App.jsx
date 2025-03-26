@@ -14,36 +14,35 @@ function App() {
   const [desc, setDesc] = useState("Descripción");
   const [name, setName] = useState("Nombre");
   const [job, setJob] = useState("Profesión");
-  
+
   const changeProjectName = (value) => {
     setProjectName(value);
-  }
+  };
   const changeSlogan = (value) => {
     setSlogan(value);
-  }
+  };
   const changeRepo = (value) => {
     setRepo(value);
-  }
+  };
   const changeDemo = (value) => {
     setDemo(value);
-  }
+  };
   const changeTech = (value) => {
     setTech(value);
-  }
+  };
   const changeDesc = (value) => {
     setDesc(value);
-  }
+  };
   const changeName = (value) => {
     setName(value);
-  }
+  };
   const changeJob = (value) => {
     setJob(value);
-  }
+  };
 
   return (
     <div className="container">
-      <Header/>
-
+      <Header />
       <main className="main">
         <section className="hero">
           <h2 className="title">Proyectos molones</h2>
@@ -54,8 +53,26 @@ function App() {
             Ver proyectos
           </a>
         </section>
-        <Preview job={job} name={name} slogan={slogan} projectName={projectName} desc={desc} tech={tech} demo={demo} repo={repo} />
-        <Form onChangeProjectName={changeProjectName} onChangeSlogan={changeSlogan} onChangeRepo={changeRepo} onChangeDemo={changeDemo} onChangeTech={changeTech} onChangeDesc={changeDesc} onChangeName={changeName} onChangeJob={changeJob} />
+        <Preview
+          job={job}
+          name={name}
+          slogan={slogan}
+          projectName={projectName}
+          desc={desc}
+          tech={tech}
+          demo={demo}
+          repo={repo}
+        />
+        <Form
+          onChangeProjectName={changeProjectName}
+          onChangeSlogan={changeSlogan}
+          onChangeRepo={changeRepo}
+          onChangeDemo={changeDemo}
+          onChangeTech={changeTech}
+          onChangeDesc={changeDesc}
+          onChangeName={changeName}
+          onChangeJob={changeJob}
+        />
       </main>
       <Footer />
     </div>

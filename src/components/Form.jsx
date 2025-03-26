@@ -1,43 +1,43 @@
 function Form(props) {
-    const handleChangeProjectName = (ev) => {
-        const projectNameValue = ev.target.value;
-        props.onChangeProjectName(projectNameValue);
-    }
+  const handleChangeProjectName = (ev) => {
+    const projectNameValue = ev.target.value;
+    props.onChangeProjectName(projectNameValue);
+  };
 
-    const handleChangeSlogan = (ev) => {
-        const sloganValue = ev.target.value;
-        props.onChangeSlogan(sloganValue);
-    }
+  const handleChangeSlogan = (ev) => {
+    const sloganValue = ev.target.value;
+    props.onChangeSlogan(sloganValue);
+  };
 
-    const handleChangeRepo = (ev) => {
-        const repoValue = ev.target.value;
-        props.onChangeRepo(repoValue);
-    }
+  const handleChangeRepo = (ev) => {
+    const repoValue = ev.target.value;
+    props.onChangeRepo(repoValue);
+  };
 
-    const handleChangeDemo = (ev) => {
-        const demoValue = ev.target.value;
-        props.onChangeDemo(demoValue);
-    }
+  const handleChangeDemo = (ev) => {
+    const demoValue = ev.target.value;
+    props.onChangeDemo(demoValue);
+  };
 
-    const handleChangeTech = (ev) => {
-        const techValue = ev.target.value;
-        props.onChangeTech(techValue);
-    }
+  const handleChangeTech = (ev) => {
+    const techValue = ev.target.value;
+    props.onChangeTech(techValue);
+  };
 
-    const handleChangeDesc = (ev) => {
-        const descValue = ev.target.value;
-        props.onChangeDesc(descValue);
-    }
+  const handleChangeDesc = (ev) => {
+    const descValue = ev.target.value;
+    props.onChangeDesc(descValue);
+  };
 
-    const handleChangeName = (ev) => {
-        const nameValue = ev.target.value;
-        props.onChangeName(nameValue);
-    }
+  const handleChangeName = (ev) => {
+    const nameValue = ev.target.value;
+    props.onChangeName(nameValue);
+  };
 
-    const handleChangeJob = (ev) => {
-        const jobValue = ev.target.value;
-        props.onChangeJob(jobValue);
-    }
+  const handleChangeJob = (ev) => {
+    const jobValue = ev.target.value;
+    props.onChangeJob(jobValue);
+  };
 
   return (
     <form className="addForm">
@@ -96,7 +96,7 @@ function Form(props) {
           rows="5"
         ></textarea>
       </fieldset>
-
+      
       <fieldset className="addForm__group">
         <legend className="addForm__title">Cuéntanos sobre la autora</legend>
         <input
