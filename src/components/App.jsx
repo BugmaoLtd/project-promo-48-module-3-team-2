@@ -2,6 +2,8 @@ import "../scss/App.scss";
 import { useState } from "react";
 import Header from "./Header";
 import Footer from "./Footer";
+import Preview from "./Preview";
+import Form from "./Form";
 
 function App() {
   const [projectName, setProjectName] = useState("Nombre del proyecto");
@@ -13,29 +15,29 @@ function App() {
   const [name, setName] = useState("Nombre");
   const [job, setJob] = useState("Profesión");
   
-  const handleChangeProjectName = (event) => {
-    setProjectName(event.target.value);
+  const changeProjectName = (value) => {
+    setProjectName(value);
   }
-  const handleChangeSlogan = (event) => {
-    setSlogan(event.target.value);
+  const changeSlogan = (value) => {
+    setSlogan(value);
   }
-  const handleChangeRepo = (event) => {
-    setRepo(event.target.value);
+  const changeRepo = (value) => {
+    setRepo(value);
   }
-  const handleChangeDemo = (event) => {
-    setDemo(event.target.value);
+  const changeDemo = (value) => {
+    setDemo(value);
   }
-  const handleChangeTech = (event) => {
-    setTech(event.target.value);
+  const changeTech = (value) => {
+    setTech(value);
   }
-  const handleChangeDesc = (event) => {
-    setDesc(event.target.value);
+  const changeDesc = (value) => {
+    setDesc(value);
   }
-  const handleChangeName = (event) => {
-    setName(event.target.value);
+  const changeName = (value) => {
+    setName(value);
   }
-  const handleChangeJob = (event) => {
-    setJob(event.target.value);
+  const changeJob = (value) => {
+    setJob(value);
   }
 
   return (
@@ -52,152 +54,8 @@ function App() {
             Ver proyectos
           </a>
         </section>
-
-        <section className="preview">
-          <div className="projectImage"></div>
-          <article className="card">
-            <h2 className="card__projectTitle">
-              <span className="card__projectTitle--text">
-                Personal project card
-              </span>
-            </h2>
-
-            <div className="card__author">
-              <div className="card__authorPhoto"></div>
-              <p className="card__job">{job}</p>
-              <h3 className="card__name">{name}</h3>
-            </div>
-
-            <div className="card__project">
-              <h3 className="card__name">{projectName}</h3>
-              <p className="card__slogan">{slogan}</p>
-              <h3 className="card__descriptionTitle">Product description</h3>
-              <p className="card__description">{desc}</p>
-
-              <div className="card__technicalInfo">
-                <p className="card__technologies">{tech}</p>
-
-                <a
-                  className="icon icon__www"
-                  href={demo}
-                  title="Haz click para ver el proyecto online"
-                >
-                  Web link
-                </a>
-                <a
-                  className="icon icon__github"
-                  href={repo}
-                  title="Haz click para ver el código del proyecto"
-                >
-                  GitHub link
-                </a>
-              </div>
-            </div>
-          </article>
-        </section>
-        <form className="addForm">
-          <h2 className="title">Información</h2>
-          <fieldset className="addForm__group">
-            <legend className="addForm__title">
-              Cuéntanos sobre el proyecto
-            </legend>
-            <input
-              onChange={handleChangeProjectName}
-              className="addForm__input"
-              type="text"
-              name="name"
-              id="name"
-              placeholder="Nombre del proyecto"
-            />
-            <input
-              onChange={handleChangeSlogan}
-              className="addForm__input"
-              type="text"
-              name="slogan"
-              id="slogan"
-              placeholder="Slogan"
-            />
-            <div className="addForm__2col">
-              <input
-                onChange={handleChangeRepo}
-                className="addForm__input"
-                type="url"
-                name="repo"
-                id="repo"
-                placeholder="Repositorio"
-              />
-              <input
-                onChange={handleChangeDemo}
-                className="addForm__input"
-                type="url"
-                name="demo"
-                id="demo"
-                placeholder="Demo"
-              />
-            </div>
-            <input
-              onChange={handleChangeTech}
-              className="addForm__input"
-              type="text"
-              name="technologies"
-              id="technologies"
-              placeholder="Tecnologías"
-            />
-            <textarea
-              onChange={handleChangeDesc}
-              className="addForm__input"
-              type="text"
-              name="desc"
-              id="desc"
-              placeholder="Descripción"
-              rows="5"
-            ></textarea>
-          </fieldset>
-
-          <fieldset className="addForm__group">
-            <legend className="addForm__title">
-              Cuéntanos sobre la autora
-            </legend>
-            <input
-              onChange={handleChangeName}
-              className="addForm__input"
-              type="text"
-              name="autor"
-              id="autor"
-              placeholder="Nombre"
-            />
-            <input
-              onChange={handleChangeJob}
-              className="addForm__input"
-              type="text"
-              name="job"
-              id="job"
-              placeholder="Trabajo"
-            />
-          </fieldset>
-
-          <fieldset className="addForm__group--upload">
-            <label htmlFor="image" className="button">
-              Subir foto del proyecto
-            </label>
-            <input
-              className="addForm__hidden"
-              type="file"
-              name="image"
-              id="image"
-            />
-            <label htmlFor="photo" className="button">
-              Subir foto de la autora
-            </label>
-            <input
-              className="addForm__hidden"
-              type="file"
-              name="photo"
-              id="photo"
-            />
-            <button className="button--large">Guardar proyecto</button>
-          </fieldset>
-        </form>
+        <Preview job={job} name={name} slogan={slogan} projectName={projectName} desc={desc} tech={tech} demo={demo} repo={repo} />
+        <Form onChangeProjectName={changeProjectName} onChangeSlogan={changeSlogan} onChangeRepo={changeRepo} onChangeDemo={changeDemo} onChangeTech={changeTech} onChangeDesc={changeDesc} onChangeName={changeName} onChangeJob={changeJob} />
       </main>
       <Footer />
     </div>
