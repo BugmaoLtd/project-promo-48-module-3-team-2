@@ -8,5 +8,5 @@ export default defineConfig({
     open: true, // Abre automáticamente el navegador
   },
   plugins: [react()],
-  base: "/project-promo-48-module-3-team-2/",
+  base: "project-promo-48-module-3-team-2",
 });
