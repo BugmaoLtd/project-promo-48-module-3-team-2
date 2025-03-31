@@ -24,6 +24,7 @@ function App() {
     desc: "Descripción",
     name: "Nombre",
     job: "Profesión",
+    imageUrl: "",
   });
 
   const changeProjectName = (value) => {
@@ -90,6 +91,7 @@ function App() {
         </section>
         <Preview project={projectInfo} />
         <Form
+          project={projectInfo}
           onChangeProjectName={changeProjectName}
           onChangeSlogan={changeSlogan}
           onChangeRepo={changeRepo}

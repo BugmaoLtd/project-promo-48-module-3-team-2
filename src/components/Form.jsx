@@ -1,3 +1,5 @@
+import GetAvatar from "./GetAvatar";
+
 function Form(props) {
   const handleChangeProjectName = (ev) => {
     const projectNameValue = ev.target.value;
@@ -37,6 +39,13 @@ function Form(props) {
   const handleChangeJob = (ev) => {
     const jobValue = ev.target.value;
     props.onChangeJob(jobValue);
+  };
+
+  const updateAvatar = (avatar) => {
+    setprojectInfo({
+      ...projectInfo,
+      props.project.imageUrl: avatar
+    })
   };
 
   return (
@@ -96,7 +105,7 @@ function Form(props) {
           rows="5"
         ></textarea>
       </fieldset>
-      
+
       <fieldset className="addForm__group">
         <legend className="addForm__title">Cuéntanos sobre la autora</legend>
         <input
@@ -118,7 +127,7 @@ function Form(props) {
       </fieldset>
 
       <fieldset className="addForm__group--upload">
-        <label htmlFor="image" className="button">
+        {/* <label htmlFor="image" className="button">
           Subir foto del proyecto
         </label>
         <input
@@ -126,7 +135,10 @@ function Form(props) {
           type="file"
           name="image"
           id="image"
-        />
+        /> */}
+
+        <GetAvatar updateAvatar={updateAvatar} text="Subir foto del proyecto" />
+
         <label htmlFor="photo" className="button">
           Subir foto de la autora
         </label>
