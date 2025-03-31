@@ -6,38 +6,73 @@ import Preview from "./Preview";
 import Form from "./Form";
 
 function App() {
-  const [projectName, setProjectName] = useState("Nombre del proyecto");
-  const [slogan, setSlogan] = useState("Slogan");
-  const [repo, setRepo] = useState("Repositorio");
-  const [demo, setDemo] = useState("Demo");
-  const [tech, setTech] = useState("Tecnologías");
-  const [desc, setDesc] = useState("Descripción");
-  const [name, setName] = useState("Nombre");
-  const [job, setJob] = useState("Profesión");
+  // const [projectName, setProjectName] = useState("Nombre del proyecto");
+  // const [slogan, setSlogan] = useState("Slogan");
+  // const [repo, setRepo] = useState("Repositorio");
+  // const [demo, setDemo] = useState("Demo");
+  // const [tech, setTech] = useState("Tecnologías");
+  // const [desc, setDesc] = useState("Descripción");
+  // const [name, setName] = useState("Nombre");
+  // const [job, setJob] = useState("Profesión");
+
+  const [projectInfo, setProjectInfo] = useState({
+    projectName: "Nombre del proyecto",
+    slogan: "Slogan",
+    repo: "Repositorio",
+    demo: "Demo",
+    tech: "Tecnologías",
+    desc: "Descripción",
+    name: "Nombre",
+    job: "Profesión",
+  });
 
   const changeProjectName = (value) => {
-    setProjectName(value);
+    setProjectInfo({
+      ...projectInfo,
+      projectName: value,
+    });
   };
   const changeSlogan = (value) => {
-    setSlogan(value);
+    setProjectInfo({
+      ...projectInfo,
+      slogan: value,
+    });
   };
   const changeRepo = (value) => {
-    setRepo(value);
+    setProjectInfo({
+      ...projectInfo,
+      repo: value,
+    });
   };
   const changeDemo = (value) => {
-    setDemo(value);
+    setProjectInfo({
+      ...projectInfo,
+      demo: value,
+    });
   };
   const changeTech = (value) => {
-    setTech(value);
+    setProjectInfo({
+      ...projectInfo,
+      tech: value,
+    });
   };
   const changeDesc = (value) => {
-    setDesc(value);
+    setProjectInfo({
+      ...projectInfo,
+      desc: value,
+    });
   };
   const changeName = (value) => {
-    setName(value);
+    setProjectInfo({
+      ...projectInfo,
+      name: value,
+    });
   };
   const changeJob = (value) => {
-    setJob(value);
+    setProjectInfo({
+      ...projectInfo,
+      job: value,
+    });
   };
 
   return (
@@ -53,16 +88,7 @@ function App() {
             Ver proyectos
           </a>
         </section>
-        <Preview
-          job={job}
-          name={name}
-          slogan={slogan}
-          projectName={projectName}
-          desc={desc}
-          tech={tech}
-          demo={demo}
-          repo={repo}
-        />
+        <Preview project={projectInfo} />
         <Form
           onChangeProjectName={changeProjectName}
           onChangeSlogan={changeSlogan}

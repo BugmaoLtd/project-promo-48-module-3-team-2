@@ -1,4 +1,4 @@
-function Preview(props) {
+function Preview({ project }) {
   return (
     <section className="preview">
       <div className="projectImage"></div>
@@ -11,30 +11,36 @@ function Preview(props) {
 
         <div className="card__author">
           <div className="card__authorPhoto"></div>
-          <p className="card__job">{props.job}</p>
-          <h3 className="card__name">{props.name}</h3>
+          <p className="card__job">{project.job || "Profesión"}</p>
+          <h3 className="card__name">{project.name || "Nombre"}</h3>
         </div>
 
         <div className="card__project">
-          <h3 className="card__name">{props.projectName}</h3>
-          <p className="card__slogan">{props.slogan}</p>
+          <h3 className="card__name">
+            {project.projectName || "Nombre del proyecto"}
+          </h3>
+          <p className="card__slogan">{project.slogan || "Slogan"}</p>
           <h3 className="card__descriptionTitle">Product description</h3>
-          <p className="card__description">{props.desc}</p>
+          <p className="card__description">{project.desc || "Descripción"}</p>
 
           <div className="card__technicalInfo">
-            <p className="card__technologies">{props.tech}</p>
+            <p className="card__technologies">
+              {project.tech || "Tecnologías"}
+            </p>
 
             <a
               className="icon icon__www"
-              href={props.demo}
+              href={project.demo || "Demo"}
               title="Haz click para ver el proyecto online"
+              target="_blank"
             >
               Web link
             </a>
             <a
               className="icon icon__github"
-              href={props.repo}
+              href={project.repo || "Repositorio"}
               title="Haz click para ver el código del proyecto"
+              target="_blank"
             >
               GitHub link
             </a>
