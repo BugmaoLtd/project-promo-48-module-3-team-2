@@ -24,7 +24,8 @@ function App() {
     desc: "Descripción",
     name: "Nombre",
     job: "Profesión",
-    imageUrl: "",
+    imageProject: "",
+    imageUser: "",
   });
 
   const changeProjectName = (value) => {
@@ -76,6 +77,20 @@ function App() {
     });
   };
 
+  const onChangeImage = (value) => {
+    setProjectInfo({
+      ...projectInfo,
+      imageProject: value
+    })
+  }
+
+  const onChangeUserImage = (value) => {
+    setProjectInfo({
+      ...projectInfo,
+      imageUser: value
+    })
+  }
+
   return (
     <div className="container">
       <Header />
@@ -100,6 +115,8 @@ function App() {
           onChangeDesc={changeDesc}
           onChangeName={changeName}
           onChangeJob={changeJob}
+          onChangeImageProject={onChangeImage}
+          onChangeUserImage={onChangeUserImage}
         />
       </main>
       <Footer />

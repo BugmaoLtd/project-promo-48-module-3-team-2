@@ -1,9 +1,9 @@
 import React from "react";
-import PropTypes from "prop-types";
-// import defaultAvatar from '../images/defaultAvatar.png';
+//import PropTypes from "prop-types";
+import defaultAvatar from '../images/ebook-example.jpg';
 
 function GetAvatar({
-  //   avatar = defaultAvatar,
+   avatar = defaultAvatar,
   updateAvatar,
   text = "Get avatar!",
 }) {
@@ -81,10 +81,10 @@ function GetAvatar({
   );
 }
 
-GetAvatar.propTypes = {
+/*GetAvatar.propTypes = {
   avatar: PropTypes.string,
   updateAvatar: PropTypes.func.isRequired,
   text: PropTypes.string,
-};
+};*/
 
 export default GetAvatar;

@@ -41,11 +41,8 @@ function Form(props) {
     props.onChangeJob(jobValue);
   };
 
-  const updateAvatar = (avatar) => {
-    setprojectInfo({
-      ...projectInfo,
-      props.project.imageUrl: avatar
-    })
+  const onChangeImageProject = (avatar) => {
+    props.onChangeImageProject(avatar);
   };
 
   return (
@@ -137,7 +134,7 @@ function Form(props) {
           id="image"
         /> */}
 
-        <GetAvatar updateAvatar={updateAvatar} text="Subir foto del proyecto" />
+        <GetAvatar updateAvatar={onChangeImageProject} text="Subir foto del proyecto" />
 
         <label htmlFor="photo" className="button">
           Subir foto de la autora
