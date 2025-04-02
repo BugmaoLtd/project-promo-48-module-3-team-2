@@ -6,27 +6,19 @@ import Preview from "./Preview";
 import Form from "./Form";
 
 function App() {
-  // const [projectName, setProjectName] = useState("Nombre del proyecto");
-  // const [slogan, setSlogan] = useState("Slogan");
-  // const [repo, setRepo] = useState("Repositorio");
-  // const [demo, setDemo] = useState("Demo");
-  // const [tech, setTech] = useState("Tecnologías");
-  // const [desc, setDesc] = useState("Descripción");
-  // const [name, setName] = useState("Nombre");
-  // const [job, setJob] = useState("Profesión");
-
   const [projectInfo, setProjectInfo] = useState({
     name: "Nombre del proyecto",
     slogan: "Slogan",
     repo: "Repositorio",
     demo: "Demo",
-    technologies: ["Tecnologías"],
+    technologies: "Tecnologías",
     desc: "Descripción",
     autor: "Nombre",
     job: "Profesión",
     image: "",
     photo: "",
   });
+  const [url, setUrl] = useState("");
 
   const changeProjectName = (value) => {
     setProjectInfo({
@@ -55,7 +47,7 @@ function App() {
   const changeTech = (value) => {
     setProjectInfo({
       ...projectInfo,
-      technologies: [value]
+      technologies: value,
     });
   };
   const changeDesc = (value) => {
@@ -96,12 +88,12 @@ function App() {
       method: "POST",
       headers: {
         "Content-type": "application/json",
-        body: JSON.stringify(projectInfo),
       },
+      body: JSON.stringify(projectInfo),
     })
       .then((response) => response.json())
       .then((data) => {
-        console.log(data);
+        setUrl(data.cardURL);
       });
   };
 
@@ -134,6 +126,10 @@ function App() {
           onSaveProject={handleSubmitProject}
         />
       </main>
+      <section className="result">
+        <h2 className="result__text">Este es el resultado:</h2>
+        <a className="result__url" href={url} target="_blank">Haz click aquí para ver tu proyecto</a>
+      </section>
       <Footer />
     </div>
   );
