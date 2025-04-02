@@ -106,7 +106,7 @@ function App() {
           <p className="hero__text">
             Escaparate en línea para recoger ideas a través de la tecnología
           </p>
-          <a className="button--link" href="./">
+          <a className="button--link" href={url} target="_blank">
             Ver proyectos
           </a>
         </section>
@@ -126,10 +126,6 @@ function App() {
           onSaveProject={handleSubmitProject}
         />
       </main>
-      <section className="result">
-        <h2 className="result__text">Este es el resultado:</h2>
-        <a className="result__url" href={url} target="_blank">Haz click aquí para ver tu proyecto</a>
-      </section>
       <Footer />
     </div>
   );
