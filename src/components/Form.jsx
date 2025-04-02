@@ -66,6 +66,7 @@ function Form(props) {
           name="name"
           id="name"
           placeholder="Nombre del proyecto"
+          value={props.name}
         />
         <input
           onChange={handleChangeSlogan}
@@ -74,6 +75,7 @@ function Form(props) {
           name="slogan"
           id="slogan"
           placeholder="Slogan"
+          value={props.slogan}
         />
         <div className="addForm__2col">
           <input
@@ -83,6 +85,7 @@ function Form(props) {
             name="repo"
             id="repo"
             placeholder="Repositorio"
+            value={props.repo}
           />
           <input
             onChange={handleChangeDemo}
@@ -91,6 +94,7 @@ function Form(props) {
             name="demo"
             id="demo"
             placeholder="Demo"
+            value={props.demo}
           />
         </div>
         <input
@@ -100,6 +104,7 @@ function Form(props) {
           name="technologies"
           id="technologies"
           placeholder="Tecnologías"
+          value={props.technologies}
         />
         <textarea
           onChange={handleChangeDesc}
@@ -109,6 +114,7 @@ function Form(props) {
           id="desc"
           placeholder="Descripción"
           rows="5"
+          value={props.desc}
         ></textarea>
       </fieldset>
 
@@ -121,6 +127,7 @@ function Form(props) {
           name="autor"
           id="autor"
           placeholder="Nombre"
+          value={props.autor}
         />
         <input
           onChange={handleChangeJob}
@@ -129,20 +136,11 @@ function Form(props) {
           name="job"
           id="job"
           placeholder="Trabajo"
+          value={props.job}
         />
       </fieldset>
 
       <fieldset className="addForm__group--upload">
-        {/* <label htmlFor="image" className="button">
-          Subir foto del proyecto
-        </label>
-        <input
-          className="addForm__hidden"
-          type="file"
-          name="image"
-          id="image"
-        /> */}
-
         <GetAvatar
           updateAvatar={onChangeImageProject}
           text="Subir foto del proyecto"
@@ -151,16 +149,6 @@ function Form(props) {
           updateAvatar={onChangeUserImage}
           text="Subir foto de la autora"
         />
-
-        {/* <label htmlFor="photo" className="button">
-          Subir foto de la autora
-        </label>
-        <input
-          className="addForm__hidden"
-          type="file"
-          name="photo"
-          id="photo"
-        /> */}
         <button className="button--large" onClick={handleSaveProject}>
           Guardar proyecto
         </button>
