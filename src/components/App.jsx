@@ -16,22 +16,22 @@ function App() {
   // const [job, setJob] = useState("Profesión");
 
   const [projectInfo, setProjectInfo] = useState({
-    projectName: "Nombre del proyecto",
+    name: "Nombre del proyecto",
     slogan: "Slogan",
     repo: "Repositorio",
     demo: "Demo",
-    tech: "Tecnologías",
+    technologies: ["Tecnologías"],
     desc: "Descripción",
-    name: "Nombre",
+    autor: "Nombre",
     job: "Profesión",
-    imageProject: "",
-    imageUser: "",
+    image: "",
+    photo: "",
   });
 
   const changeProjectName = (value) => {
     setProjectInfo({
       ...projectInfo,
-      projectName: value,
+      name: value,
     });
   };
   const changeSlogan = (value) => {
@@ -55,7 +55,7 @@ function App() {
   const changeTech = (value) => {
     setProjectInfo({
       ...projectInfo,
-      tech: value,
+      technologies: [value]
     });
   };
   const changeDesc = (value) => {
@@ -67,7 +67,7 @@ function App() {
   const changeName = (value) => {
     setProjectInfo({
       ...projectInfo,
-      name: value,
+      autor: value,
     });
   };
   const changeJob = (value) => {
@@ -80,16 +80,30 @@ function App() {
   const onChangeImage = (value) => {
     setProjectInfo({
       ...projectInfo,
-      imageProject: value
-    })
-  }
+      image: value,
+    });
+  };
 
   const onChangeUserImage = (value) => {
     setProjectInfo({
       ...projectInfo,
-      imageUser: value
+      photo: value,
+    });
+  };
+
+  const handleSubmitProject = () => {
+    fetch("https://dev.adalab.es/api/projectCard", {
+      method: "POST",
+      headers: {
+        "Content-type": "application/json",
+        body: JSON.stringify(projectInfo),
+      },
     })
-  }
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+      });
+  };
 
   return (
     <div className="container">
@@ -117,6 +131,7 @@ function App() {
           onChangeJob={changeJob}
           onChangeImageProject={onChangeImage}
           onChangeUserImage={onChangeUserImage}
+          onSaveProject={handleSubmitProject}
         />
       </main>
       <Footer />

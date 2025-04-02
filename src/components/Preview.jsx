@@ -1,9 +1,12 @@
-import imagebooks from "../images/ebook-example.jpg"
+import imageBooks from "../images/ebook-example.jpg";
+import avatarImg from "../images/avatar.webp";
 
 function Preview({ project }) {
   return (
     <section className="preview">
-      <div className="projectImage"><img src={project.imageProject || imagebooks}   alt="imagen del proyecto"/></div>
+      <div className="projectImage">
+        <img src={project.image || imageBooks} alt="imagen del proyecto" />
+      </div>
       <article className="card">
         <h2 className="card__projectTitle">
           <span className="card__projectTitle--text">
@@ -12,14 +15,16 @@ function Preview({ project }) {
         </h2>
 
         <div className="card__author">
-          <div className="card__authorPhoto"></div>
+          <div className="card__authorPhoto">
+            <img src={project.photo || avatarImg} alt="Imagen autora" />
+          </div>
           <p className="card__job">{project.job || "Profesión"}</p>
-          <h3 className="card__name">{project.name || "Nombre"}</h3>
+          <h3 className="card__name">{project.autor || "Nombre"}</h3>
         </div>
 
         <div className="card__project">
           <h3 className="card__name">
-            {project.projectName || "Nombre del proyecto"}
+            {project.name || "Nombre del proyecto"}
           </h3>
           <p className="card__slogan">{project.slogan || "Slogan"}</p>
           <h3 className="card__descriptionTitle">Product description</h3>
@@ -27,7 +32,7 @@ function Preview({ project }) {
 
           <div className="card__technicalInfo">
             <p className="card__technologies">
-              {project.tech || "Tecnologías"}
+              {project.technologies || "Tecnologías"}
             </p>
 
             <a

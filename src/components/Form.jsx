@@ -45,6 +45,15 @@ function Form(props) {
     props.onChangeImageProject(avatar);
   };
 
+  const onChangeUserImage = (avatar) => {
+    props.onChangeUserImage(avatar);
+  };
+
+  const handleSaveProject = (ev) => {
+    ev.preventDefault();
+    props.onSaveProject();
+  };
+
   return (
     <form className="addForm">
       <h2 className="title">Información</h2>
@@ -134,9 +143,16 @@ function Form(props) {
           id="image"
         /> */}
 
-        <GetAvatar updateAvatar={onChangeImageProject} text="Subir foto del proyecto" />
+        <GetAvatar
+          updateAvatar={onChangeImageProject}
+          text="Subir foto del proyecto"
+        />
+        <GetAvatar
+          updateAvatar={onChangeUserImage}
+          text="Subir foto de la autora"
+        />
 
-        <label htmlFor="photo" className="button">
+        {/* <label htmlFor="photo" className="button">
           Subir foto de la autora
         </label>
         <input
@@ -144,8 +160,10 @@ function Form(props) {
           type="file"
           name="photo"
           id="photo"
-        />
-        <button className="button--large">Guardar proyecto</button>
+        /> */}
+        <button className="button--large" onClick={handleSaveProject}>
+          Guardar proyecto
+        </button>
       </fieldset>
     </form>
   );
