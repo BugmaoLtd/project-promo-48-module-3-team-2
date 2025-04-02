@@ -1,9 +1,9 @@
 import React from "react";
 //import PropTypes from "prop-types";
-import defaultAvatar from '../images/ebook-example.jpg';
+import defaultAvatar from "../images/ebook-example.jpg";
 
 function GetAvatar({
-   avatar = defaultAvatar,
+  avatar = defaultAvatar,
   updateAvatar,
   text = "Get avatar!",
 }) {
@@ -63,9 +63,10 @@ function GetAvatar({
 
   return (
     <div className="get-avatar">
-      <label className="get-avatar__label">
+      <label className="get-avatar__label button">
         {text}
         <input
+          className="addForm__hidden"
           type="file"
           ref={myFileField}
           style={{ display: "none" }}
