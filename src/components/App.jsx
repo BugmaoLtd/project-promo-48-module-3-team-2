@@ -1,25 +1,30 @@
 import "../scss/App.scss";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Header from "./Header";
 import Footer from "./Footer";
 import Preview from "./Preview";
 import Form from "./Form";
+import ls from "../services/localStorage";
 
 function App() {
-  const [projectInfo, setProjectInfo] = useState({
-    name: "Nombre del proyecto",
-    slogan: "Slogan",
-    repo: "Repositorio",
-    demo: "Demo",
-    technologies: "Tecnologías",
-    desc: "Descripción",
-    autor: "Nombre",
-    job: "Profesión",
+  const [projectInfo, setProjectInfo] = useState(ls.get("User info", {
+    name: "",
+    slogan: "",
+    repo: "",
+    demo: "",
+    technologies: "",
+    desc: "",
+    autor: "",
+    job: "",
     image: "",
     photo: "",
-  });
+  }));
   const [url, setUrl] = useState("");
   const [isHidden, setIsHidden] = useState(true);
+
+  useEffect(() => {
+    ls.set("User info", projectInfo);
+  }, [projectInfo]);
 
   const changeProjectName = (value) => {
     setProjectInfo({

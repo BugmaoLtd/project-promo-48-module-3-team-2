@@ -66,7 +66,7 @@ function Form(props) {
           name="name"
           id="name"
           placeholder="Nombre del proyecto"
-          value={props.name}
+          value={props.project.name}
         />
         <input
           onChange={handleChangeSlogan}
@@ -75,7 +75,7 @@ function Form(props) {
           name="slogan"
           id="slogan"
           placeholder="Slogan"
-          value={props.slogan}
+          value={props.project.slogan}
         />
         <div className="addForm__2col">
           <input
@@ -85,7 +85,7 @@ function Form(props) {
             name="repo"
             id="repo"
             placeholder="Repositorio"
-            value={props.repo}
+            value={props.project.repo}
           />
           <input
             onChange={handleChangeDemo}
@@ -94,7 +94,7 @@ function Form(props) {
             name="demo"
             id="demo"
             placeholder="Demo"
-            value={props.demo}
+            value={props.project.demo}
           />
         </div>
         <input
@@ -104,7 +104,7 @@ function Form(props) {
           name="technologies"
           id="technologies"
           placeholder="Tecnologías"
-          value={props.technologies}
+          value={props.project.technologies}
         />
         <textarea
           onChange={handleChangeDesc}
@@ -114,7 +114,7 @@ function Form(props) {
           id="desc"
           placeholder="Descripción"
           rows="5"
-          value={props.desc}
+          value={props.project.desc}
         ></textarea>
       </fieldset>
 
@@ -127,7 +127,7 @@ function Form(props) {
           name="autor"
           id="autor"
           placeholder="Nombre"
-          value={props.autor}
+          value={props.project.autor}
         />
         <input
           onChange={handleChangeJob}
@@ -136,7 +136,7 @@ function Form(props) {
           name="job"
           id="job"
           placeholder="Trabajo"
-          value={props.job}
+          value={props.project.job}
         />
       </fieldset>
 
