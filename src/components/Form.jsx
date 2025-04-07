@@ -153,6 +153,9 @@ function Form(props) {
           Guardar proyecto
         </button>
       </fieldset>
+      <p className={`resultUrl ${props.isHidden ? "resultHidden" : ""}`}>
+        Mira el resultado de tu proyecto <a href={props.url} target="_blank">aquí</a>
+      </p>
     </form>
   );
 }

@@ -19,6 +19,7 @@ function App() {
     photo: "",
   });
   const [url, setUrl] = useState("");
+  const [isHidden, setIsHidden] = useState(true);
 
   const changeProjectName = (value) => {
     setProjectInfo({
@@ -95,6 +96,7 @@ function App() {
       .then((data) => {
         setUrl(data.cardURL);
       });
+    setIsHidden(false);
   };
 
   return (
@@ -106,7 +108,7 @@ function App() {
           <p className="hero__text">
             Escaparate en línea para recoger ideas a través de la tecnología
           </p>
-          <a className="button--link" href={url} target="_blank">
+          <a className="button--link" href="" target="_blank">
             Ver proyectos
           </a>
         </section>
@@ -124,6 +126,8 @@ function App() {
           onChangeImageProject={onChangeImage}
           onChangeUserImage={onChangeUserImage}
           onSaveProject={handleSubmitProject}
+          url={url}
+          isHidden={isHidden}
         />
       </main>
       <Footer />

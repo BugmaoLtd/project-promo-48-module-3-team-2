@@ -360,6 +360,24 @@
   border-color: var(--color-white);
 }
 
+.resultUrl {
+  text-align: center;
+  padding-bottom: 20px;
+  font: var(--font-card-title);
+  
+  a {
+    color: #c0b7e8;
+    
+    &:hover {
+      color: var(--color-dark-lilac);
+    }
+  }
+}
+
+.resultHidden {
+  display: none;
+}
+
 /* ICONS */
 
 .icon {
@@ -390,7 +408,7 @@
 
   &__url {
     text-decoration: none;
-    color: #14D9C4;
+    color: #14d9c4;
 
     &:hover {
       opacity: 0.7;
