@@ -43,5 +43,5 @@ Puedes ver la aplicación desplegada [aquí](https://bugmaoltd.github.io/project
 Este proyecto ha sido desarrollado por:
 - Begoña López
 - Mafe Toro
-- Loreto G.
+- Loreto Gutiérrez
 - Laia Pozo
